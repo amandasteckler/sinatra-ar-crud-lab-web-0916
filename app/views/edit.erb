@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2>Existing post:</h2>
+    <p>Post name: <%= @post.name %></p>
+    <p>Post content: <%= @post.content %></p>
+
+    <br><br>
+
+    <h2>Update post:</h2>
+    <form action='/posts/<%= @post.id %>' method='post'>
+      <input id='hidden' type='hidden' name='_method' value='patch'>
+      <label>Update name: </label>
+      <input type='text' name='name'>
+      <label>Update content: </label>
+      <input type='text' name='content'>
+      <input type='submit' value='submit'>
+    </form>
+  </body>
+</html>
